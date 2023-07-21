@@ -1,0 +1,37 @@
+
+
+
+model New_Model
+
+  // Compartments and Species:
+  compartment C1; 
+  C1=1e-12
+  species S , E , ES , P ;
+
+  // Reactions:
+  enzyme_complex: E + S -> ES; k1*E*S;
+  enzyme_decomplex: ES -> E + S; k2*ES;
+  product: ES -> E + P; k3*ES;
+  substrate_generation:  -> S; k4;
+  product_degredation: P -> ; k5*P;
+
+  // Species initializations:
+  S = 240;
+  E = 10;
+  ES = 1;
+  P = 2;
+
+
+
+  // Variable initializations:
+  k1 = 1.666e-3
+  k2 = 1.5;
+  k3 = 4;
+  k4 = 3.011;
+  k5 = 1;
+
+ 
+end
+
+
+
